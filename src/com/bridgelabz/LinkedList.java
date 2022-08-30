@@ -41,20 +41,30 @@ public class LinkedList<T> {
 //        node.next = tail;
 //    }
 
-    public T popLast() {
-        T popLastElement = tail.data;
+//    public T popLast() {
+//        T popLastElement = tail.data;
+//        Node<T> temp = head;
+//
+//        while(temp.next != tail){
+//            temp = temp.next;
+//        }
+//
+//        temp.next = null;
+//        temp = tail;
+//        return  popLastElement;
+//
+//    }
+
+    public Node<T> search(T searchData) {
         Node<T> temp = head;
 
-        while(temp.next != tail){
+        while(temp != null){
+            if(temp.data.equals(searchData))
+                return temp;
             temp = temp.next;
         }
-
-        temp.next = null;
-        temp = tail;
-        return  popLastElement;
-
+        return null;
     }
-
 
     void print() {
         Node<T> temp = head;
