@@ -17,6 +17,12 @@ public class LinkedList<T> {
         }
     }
 
+    public T pop() {
+        T popElement = head.data;
+        head = head.next;
+        return popElement;
+    }
+
 //    void append(T data){
 //        Node<T> node = new Node<>(data);
 //        if(head == null){
@@ -29,11 +35,11 @@ public class LinkedList<T> {
 //        }
 //    }
 
-    public void insert(T data) {
-        Node<T> node = new Node<>(data);
-        head.next = node;
-        node.next = tail;
-    }
+//    public void insert(T data) {
+//        Node<T> node = new Node<>(data);
+//        head.next = node;
+//        node.next = tail;
+//    }
 
     void print() {
         Node<T> temp = head;
