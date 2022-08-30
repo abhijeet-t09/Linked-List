@@ -78,6 +78,26 @@ public class LinkedList<T> {
         return false;
     }
 
+    public void remove(T value){
+        Node<T> searchedNode = search(value);
+        Node<T> temp = head;
+        while(temp.next != searchedNode){
+            temp = temp.next;
+        }
+        temp.next = searchedNode.next;
+
+    }
+
+    public int size(){
+        int count=0;
+        Node<T> temp = head;
+        while(temp != null){
+            temp = temp.next;
+            count++;
+        }
+        return count;
+    }
+
     void print() {
         Node<T> temp = head;
 

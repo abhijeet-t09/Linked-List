@@ -14,6 +14,12 @@ public class LinkedListMain {
 
         linkedList.insertAfter(30,40);
         linkedList.print();
+        System.out.println();
+
+        linkedList.remove(40);
+        linkedList.print();
+        System.out.println();
+        System.out.println("Size of Linked List: " + linkedList.size());
 
 //        if(linkedList.search(30) != null ){
 //            System.out.println("Element Found");
