@@ -1,21 +1,42 @@
 package com.bridgelabz;
 
-public class LinkedList<T> {
+public class LinkedList<T extends Comparable<T>> {
     Node<T> head;
     Node<T> tail;
 
-    void push(T data) {
-        Node<T> node = new Node<>(data);
+//    void push(T data) {
+//        Node<T> node = new Node<>(data);
+//
+//        if (head == null) {
+//            head = node;
+//            tail = node;
+//        }
+//        else {
+//            node.next = head;
+//            head = node;
+//        }
+//    }
 
-        if (head == null) {
-            head = node;
-            tail = node;
-        }
-        else {
+    void push(T data){
+        Node<T> node = new Node<>(data);
+        sortedInsert(node);
+    }
+
+    public void sortedInsert(Node<T> node) {
+        Node<T> temp = head;
+
+        if (temp == null || temp.data.compareTo(node.data) >=0 ) {
             node.next = head;
             head = node;
+        } else {
+            while (temp.next != null && temp.next.data.compareTo(node.data) < 0 )
+                temp = temp.next;
+
+            node.next = temp.next;
+            temp.next = node;
         }
     }
+
 
     public T pop() {
         T popElement = head.data;
@@ -23,37 +44,37 @@ public class LinkedList<T> {
         return popElement;
     }
 
-//    void append(T data){
-//        Node<T> node = new Node<>(data);
-//        if(head == null){
-//            head = node;
-//            tail = node;
-//        }
-//        else{
-//            tail.next = node;
-//            tail = node;
-//        }
-//    }
+    void append(T data){
+        Node<T> node = new Node<>(data);
+        if(head == null){
+            head = node;
+            tail = node;
+        }
+        else{
+            tail.next = node;
+            tail = node;
+        }
+    }
 
-//    public void insert(T data) {
-//        Node<T> node = new Node<>(data);
-//        head.next = node;
-//        node.next = tail;
-//    }
+    public void insert(T data) {
+        Node<T> node = new Node<>(data);
+        head.next = node;
+        node.next = tail;
+    }
 
-//    public T popLast() {
-//        T popLastElement = tail.data;
-//        Node<T> temp = head;
-//
-//        while(temp.next != tail){
-//            temp = temp.next;
-//        }
-//
-//        temp.next = null;
-//        temp = tail;
-//        return  popLastElement;
-//
-//    }
+    public T popLast() {
+        T popLastElement = tail.data;
+        Node<T> temp = head;
+
+        while(temp.next != tail){
+            temp = temp.next;
+        }
+
+        temp.next = null;
+        temp = tail;
+        return  popLastElement;
+
+    }
 
     public Node<T> search(T searchData) {
         Node<T> temp = head;
@@ -105,6 +126,6 @@ public class LinkedList<T> {
             System.out.print(temp.data + " -> ");
             temp = temp.next;
         }
-        System.out.println(tail.next);
+        System.out.println(this.tail);
     }
 }

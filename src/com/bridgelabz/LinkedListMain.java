@@ -6,20 +6,11 @@ public class LinkedListMain {
 
         LinkedList<Integer> linkedList = new LinkedList<>();
 
+        linkedList.push(40);
         linkedList.push(70);
         linkedList.push(30);
         linkedList.push(56);
         linkedList.print();
-        System.out.println();
-
-        linkedList.insertAfter(30,40);
-        linkedList.print();
-        System.out.println();
-
-        linkedList.remove(40);
-        linkedList.print();
-        System.out.println();
-        System.out.println("Size of Linked List: " + linkedList.size());
 
 //        if(linkedList.search(30) != null ){
 //            System.out.println("Element Found");
@@ -41,5 +32,14 @@ public class LinkedListMain {
 
 //        linkedList.insert(30);
 //        linkedList.print();
+
+//        linkedList.insertAfter(30,40);
+//        linkedList.print();
+//        System.out.println();
+//
+//        linkedList.remove(40);
+//        linkedList.print();
+//        System.out.println();
+//        System.out.println("Size of Linked List: " + linkedList.size());
     }
 }
