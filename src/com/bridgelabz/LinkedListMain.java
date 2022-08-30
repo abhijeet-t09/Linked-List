@@ -12,9 +12,12 @@ public class LinkedListMain {
         linkedList.print();
         System.out.println();
 
-        System.out.println("Element to Pop: " + linkedList.pop());
+        System.out.println("Element to Pop: " + linkedList.popLast());
         System.out.println();
         linkedList.print();
+
+//        System.out.println("Element to Pop: " + linkedList.pop());
+//        linkedList.print();
 
 //        linkedList.append(56);
 //        linkedList.append(30);
