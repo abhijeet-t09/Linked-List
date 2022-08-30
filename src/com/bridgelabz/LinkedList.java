@@ -21,8 +21,9 @@ public class LinkedList<T> {
         Node<T> temp = head;
 
         while (temp != null) {
-            System.out.print(temp.data + " ");
+            System.out.print(temp.data + " -> ");
             temp = temp.next;
         }
+        System.out.println(tail.next);
     }
 }
