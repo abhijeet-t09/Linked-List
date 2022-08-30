@@ -12,12 +12,15 @@ public class LinkedListMain {
         linkedList.print();
         System.out.println();
 
-        if(linkedList.search(30) != null ){
-            System.out.println("Element Found");
-        }
-        else {
-            System.out.println("Element Not Found");
-        }
+        linkedList.insertAfter(30,40);
+        linkedList.print();
+
+//        if(linkedList.search(30) != null ){
+//            System.out.println("Element Found");
+//        }
+//        else {
+//            System.out.println("Element Not Found");
+//        }
 
 //        System.out.println("Element to Pop: " + linkedList.pop());
 //        linkedList.print();
